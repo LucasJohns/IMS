@@ -1,0 +1,80 @@
+body {
+    position        : fixed;
+    background-color: #F3F3F3;
+    font-family     : 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+/* Side Bar */
+
+.sidebarWrapper {
+    position        : inherit;
+    min-width       : 350px;
+    height          : 100%;
+    background-color: #DAD7CD;
+    z-index         : 2;
+}
+
+.topBar {
+    background-color: #A50104;
+    color           : #F3F3F3;
+    padding         : 15px;
+}
+
+.topBar label {
+    font-size  : 18px;
+    font-weight: bold;
+}
+
+.topBar select {
+    margin-bottom: 7px;
+    width        : 100%;
+    padding      : 10px 15px;
+    font-size    : 16px;
+}
+
+.sidebarItemContainer {
+    width         : 100%;
+    height        : 100%;
+    padding-top   : 30px;
+    padding-bottom: 15px;
+    padding       : 30px 30px 130px;
+    overflow-y    : scroll;
+}
+
+.sidebarItemContainer button {
+    width           : 100%;
+    display         : block;
+    margin          : 0 auto;
+    height          : 50px;
+    border          : none;
+    background-color: #002642;
+    color           : #F3F3F3;
+    font-size       : 18px;
+    margin-bottom   : 18px;
+}
+
+.sidebarItemContainer button:hover {
+    cursor: move;
+}
+
+.sidebarItemContainer button:focus {
+    outline: 0;
+}
+
+/*Nav Bar*/
+.navbar {
+    margin-left     : 350px;
+    position        : fixed;
+    width           : 100%;
+    height          : 50px;
+    background-color: #DAD7CD;
+    border-bottom   : 15px solid #A50104;
+}
+
+.rightSection {
+    position        : fixed;
+    right           : 0;
+    width           : 50%;
+    height          : 35px;
+    background-color: red;
+}
