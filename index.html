@@ -14,6 +14,19 @@
 </head>
 
 <body>
+    <div class="navbar">
+        <div class="leftSection">
+            <p class="companyName">Browndale Fire Co. Incident Management Dashboard</p>
+        </div>
+        <div class="rightSection">
+            <ul class="nav">
+                <li><span id="timerText"></span></li>
+                <li><button href="index.html">New Company</button></li>
+                <li><button href="index.html" id="timerStart" onclick="startTimer();">Start
+                        Timer</button></li>
+            </ul>
+        </div>
+    </div>
 
     <div class="sidebarWrapper">
         <div class="topBar">
@@ -25,100 +38,199 @@
             </select>
         </div>
         <div class="sidebarItemContainer">
-            <button draggable="true">
+            <button draggable="true" id="3ENG" ondragstart="drag(event)">
+                3 ENG
+            </button>
+            <button draggable="true" id="13ENG" ondragstart="drag(event)">
+                13 ENG
+            </button>
+            <button draggable="true" id="23ENG" ondragstart="drag(event)">
+                23 ENG
+            </button>
+            <button draggable="true" id="33ENG" ondragstart="drag(event)">
+                33 ENG
+            </button>
+            <button draggable="true" id="43ENG" ondragstart="drag(event)">
                 43 ENG
             </button>
-            <button draggable="true">
-                43 ENG
+            <button draggable="true" id="53ENG" ondragstart="drag(event)">
+                53 ENG
             </button>
-            <button draggable="true">
-                43 ENG
+            <button draggable="true" id="63ENG" ondragstart="drag(event)">
+                63 ENG
             </button>
-            <button draggable="true">
-                43 ENG
+            <button draggable="true" id="73ENG" ondragstart="drag(event)">
+                73 ENG
             </button>
-            <button draggable="true">
-                43 ENG
+            <button draggable="true" id="83ENG" ondragstart="drag(event)">
+                83 ENG
             </button>
-            <button draggable="true">
-                43 ENG
+            <button draggable="true" id="93ENG" ondragstart="drag(event)">
+                93 ENG
             </button>
-            <button draggable="true">
-                43 ENG
+            <button draggable="true" id="103ENG" ondragstart="drag(event)">
+                103 ENG
             </button>
-            <button draggable="true">
-                43 ENG
+            <button draggable="true" id="113ENG" ondragstart="drag(event)">
+                113 ENG
             </button>
-            <button draggable="true">
-                43 ENG
+            <button draggable="true" id="123ENG" ondragstart="drag(event)">
+                123 ENG
             </button>
-            <button draggable="true">
-                43 ENG
+            <button draggable="true" id="133ENG" ondragstart="drag(event)">
+                133 ENG
             </button>
-            <button draggable="true">
-                43 ENG
-            </button>
-            <button draggable="true">
-                43 ENG
-            </button>
-            <button draggable="true">
-                43 ENG
-            </button>
-            <button draggable="true">
-                43 ENG
-            </button>
-            <button draggable="true">
-                43 ENG
+            <button draggable="true" id="143ENG" ondragstart="drag(event)">
+                143 ENG
             </button>
             </button>
-            <button draggable="true">
-                43 ENG
+            <button draggable="true" id="153ENG" ondragstart="drag(event)">
+                153 ENG
             </button>
-            <button draggable="true">
-                43 ENG
+            <button draggable="true" id="163ENG" ondragstart="drag(event)">
+                163 ENG
             </button>
-            <button draggable="true">
-                43 ENG
+            <button draggable="true" id="173ENG" ondragstart="drag(event)">
+                173 ENG
             </button>
-            <button draggable="true">
-                43 ENG
+            <button draggable="true" id="173ENG" ondragstart="drag(event)">
+                183 ENG
             </button>
             </button>
-            <button draggable="true">
-                43 ENG
+            <button draggable="true" id="183ENG" ondragstart="drag(event)">
+                193 ENG
             </button>
-            <button draggable="true">
-                43 ENG
+            <button draggable="true" id="193ENG" ondragstart="drag(event)">
+                203 ENG
             </button>
-            <button draggable="true">
-                43 ENG
+            <button draggable="true" id="203ENG" ondragstart="drag(event)">
+                213 ENG
             </button>
-            <button draggable="true">
-                43 ENG
+            <button draggable="true" id="213ENG" ondragstart="drag(event)">
+                223 ENG
             </button>
         </div>
 
-    </div>
 
-    <div class="navbar">
-        <div class="rightSection">
-            <ul class="nav">
-                <li><a href="index.html">New Company</a></li>
-                <li><a href="index.html">Start Timer</a></li>
-            </ul>
+
+    </div>
+    <div class="pseudoBody">
+        <table id="incidentTable">
+            <tr>
+                <th>Ventillation</th>
+                <th>Interior/Fire Attack</th>
+                <th>Exterior Fire Attack</th>
+                <th>Search And Rescue</th>
+                <th>Exposure Protection</th>
+                <th>R.I.T</th>
+                <th>Rehab</th>
+                <th>Staging</th>
+            </tr>
+            <tr>
+                <td id="cell1" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell2" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell3" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell4" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell5" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell6" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell7" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell8" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+            </tr>
+            <tr>
+                <td id="cell9" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell10" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell11" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell12" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell13" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell14" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell15" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell16" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+            </tr>
+            <tr>
+                <td id="cell17" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell18" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell19" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell20" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell21" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell22" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell23" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell24" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+            </tr>
+            <tr>
+                <td id="cell25" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell26" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell27" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell28" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell29" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell30" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell31" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell32" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+            </tr>
+            <tr>
+                <td id="cell33" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell34" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell35" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell36" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell37" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell38" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell39" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell40" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+            </tr>
+            <tr>
+                <td id="cell41" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell42" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell43" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell44" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell45" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell46" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell47" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell48" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+            </tr>
+            <tr>
+                <td id="cell49" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell50" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell51" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell52" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell53" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell54" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell55" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell56" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+            </tr>
+        </table>
+    </div>
+    <div class="hidden" id="popupWrapper">
+        <div id="popupContainer">
+            <p class="upperBar">
+                Benchmark Reached
+            </p>
+            <div id="popupBody">
+                <img alt="warning" src="images/warning.png" style="width:100%; max-width:64px; padding-bottom:16px;" />
+                <p style="padding: 0px 25px; text-align:center;">You have reached your first benchmark, please do a
+                    PAR
+                    check and confirm
+                    it's completed below to
+                    resume
+                    the
+                    timer</p>
+                <button class="button confirmPar" onclick="confirmParCheck();">Confirm PAR</button>
+            </div>
         </div>
     </div>
 
     <!-- Footer Scripts-->
+    <script src="js/timer.js">
+    </script>
+    <script src="js/incidentTableDragScript.js">
+    </script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+        </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+        </script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+        </script>
 </body>
 
 </html>
