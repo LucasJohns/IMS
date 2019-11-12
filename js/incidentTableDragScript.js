@@ -9,7 +9,7 @@ function drag(ev) {
 function drop(ev) {
 
     ev.preventDefault();
-    console.log(ev.target.id.search('cell'), ev.currentTarget.children.length);
+    console.log(ev.currentTarget.id, ev.target);
     if (ev.target.id.search('ENG') == -1 && ev.target.children.length == 0) {
         var dragged = ev.dataTransfer.getData("src");
         ev.target.appendChild(document.getElementById(dragged));
@@ -17,8 +17,10 @@ function drop(ev) {
         var src = document.getElementById(ev.dataTransfer.getData("src"));
         var srcParent = src.parentNode;
         var tgt = ev.currentTarget.firstElementChild;
-        ev.currentTarget.replaceChild(src, tgt);
-        srcParent.appendChild(tgt);
+        if (srcParent.className != 'sidebarItemContainer') {
+            ev.currentTarget.replaceChild(src, tgt);
+            srcParent.appendChild(tgt);
+        }
     }
 
 
