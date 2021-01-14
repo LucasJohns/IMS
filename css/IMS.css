@@ -7,21 +7,144 @@ body {
     font-family: 'Roboto Slab', serif;
 }
 
+#closeWindow{
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    color:#fff;
+    border: none;
+    outline:none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 12px;
+}
+
+#closeWindow:hover{
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#newCompanyPopup{
+    position:fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    background-color: #DAD7CD;
+    box-shadow: 0px 0px 2px 1px #bab7af;
+    max-width: 340px;
+}
+
+.newCompanyPopupBody input:not(button), .newCompanyPopupBody select{
+    width: 100%;
+    height: 30px;
+    box-sizing: content-box;
+    border:none;
+}
+
+.newCompanyPopupBody p{
+    font-size: 16px;
+}
+
+.newCompanyPopupBody label{
+    margin-top: 15px;
+}
+
+.newCompanyPopupBody button{
+    background-color: #002642;
+    color: #fff;
+    display:block;
+    width: 140px;
+    height: 40px;
+    margin: 15px auto;
+    outline: none;
+    border: none;
+}
+
+.newCompanyPopupBody button:hover{
+    cursor: pointer;
+    filter: brightness(1.1);
+}
+.newCompanyPopupBody{
+    padding: 0 15px 15px;
+}
+
+.sidebarItemContainer button{
+    display: none !important;
+}
+
 .hidden {
     display: none;
 }
 
+#extraContent{
+    margin-right: 25px;
+}
+
+#extraContent label{
+    font-size: 14px;
+}
+
+#incidentPhaseContainer, #benchmarkContainer, #resourceContainer, #attackStyleContainer, #eventChecklistContainer{
+    width: 16.6%;
+    background-color: #DAD7CD;
+    margin-bottom: 15px;
+}
+
+
+#eventChecklistContainer{
+    width: 25% !important;
+}
+
+.contentFlexWrapper{
+    display:flex;
+    flex-wrap:wrap;
+}
+
+#incidents, #benchmarks, #resources, #eventChecklists, #attackStyles{
+    padding: 10px 15px;
+    border-right: 1px solid #bab7af;
+    height: 300px;
+}
+
+#attackStyles{
+    border-right: none !important;
+}
+
+
+#incidentPhaseContainer input[type="checkbox"], #benchmarkContainer input[type="checkbox"], #resourceContainer input[type="checkbox"], #eventChecklistContainer input[type="checkbox"], #attackStyleContainer input[type="checkbox"]{
+    width: 18px;
+    height: 18px;
+    position: relative;
+    top: 3px;
+}
+
+.boxHeader{
+    background-color: #A50104;
+    width: 100%;
+    height: 30px;
+}
+
+.boxHeader p{
+    color:#fff;
+    font-size: 16px;
+    line-height: 30px;
+    text-align:Center;
+}
+
 .pseudoBody {
-    margin-left: 350px;
+    margin-left: 365px;
     margin-top: 50px;
 }
 
 .companyName {
-    font-size: 14px;
+    font-size: 16px;
     color: #222222;
     line-height: 50px;
     font-family: 'Roboto Slab', serif;
-    font-weight: 400;
+    font-weight: bold;
+    display:none;
 }
 
 #timerText {
@@ -155,7 +278,7 @@ body {
 /*Incident Table*/
 
 #incidentTable {
-    margin: 65px 15px 15px 15px;
+    margin: 65px 0px 15px 0px;
 }
 
 #incidentTable th {

@@ -17,12 +17,15 @@ function drop(ev) {
         var src = document.getElementById(ev.dataTransfer.getData("src"));
         var srcParent = src.parentNode;
         var tgt = ev.currentTarget.firstElementChild;
-		console.log("oof");
-			
-        if (srcParent.className != 'sidebarItemContainer') { //Determines if you are trying to swap blocks from the container to within the table
+        console.log(tgt.className);
+        if (tgt.parentNode.className != 'sidebarItemContainer') {
+            // if (srcParent.className != 'sidebarItemContainer') { //Determines if you are trying to swap blocks from the container to within the table
             ev.currentTarget.replaceChild(src, tgt);
-            srcParent.appendChild(tgt);
-			console.log("oof2");
+            srcParent.prepend(tgt);
+            console.log("oof2");
+            // }
+        } else {
+            tgt.parentNode.prepend(src);
         }
     }
 
