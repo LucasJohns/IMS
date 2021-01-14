@@ -87,14 +87,14 @@ body {
 }
 
 #incidentPhaseContainer, #benchmarkContainer, #resourceContainer, #attackStyleContainer, #eventChecklistContainer{
-    width: 10.6%;
+    width: 12.6%;
     background-color: #DAD7CD;
     margin-bottom: 15px;
 }
 
 
 #eventChecklistContainer, #resourceContainer{
-    width: 34% !important;
+    width: 31% !important;
 }
 
 .contentFlexWrapper{
