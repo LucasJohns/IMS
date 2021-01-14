@@ -21,7 +21,7 @@
         <div class="rightSection">
             <ul class="nav">
                 <li><span id="timerText"></span></li>
-                <li><button href="index.html">New Company</button></li>
+                <!--<li><button href="index.html">New Company</button></li>-->
                 <li><button href="index.html" id="timerStart" onclick="startTimer();">Start
                         Timer</button></li>
             </ul>
@@ -37,7 +37,7 @@
                 <option value="wayne">Lackawanna</option>
             </select>
         </div>
-        <div class="sidebarItemContainer">
+        <div class="sidebarItemContainer" ondragover="allowDrop(event)" ondrop="drop(event)">
             <button draggable="true" id="3ENG" ondragstart="drag(event)">
                 3 ENG
             </button>
