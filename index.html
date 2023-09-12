@@ -10,114 +10,527 @@
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="css/IMS.css" />
 
-    <title>IMS</title>
+    <title>Browndale Fire Co. Incident Management Dashboard</title>
 </head>
 
 <body>
-
-    <div class="sidebarWrapper">
-        <div class="topBar">
-            <label for="countySelect">Select County:</label>
-            <select name="countySelect">
-                <option value="wayne">Wayne</option>
-                <option value="wayne">Susquehanna</option>
-                <option value="wayne">Lackawanna</option>
-            </select>
-        </div>
-        <div class="sidebarItemContainer">
-            <button draggable="true">
-                43 ENG
-            </button>
-            <button draggable="true">
-                43 ENG
-            </button>
-            <button draggable="true">
-                43 ENG
-            </button>
-            <button draggable="true">
-                43 ENG
-            </button>
-            <button draggable="true">
-                43 ENG
-            </button>
-            <button draggable="true">
-                43 ENG
-            </button>
-            <button draggable="true">
-                43 ENG
-            </button>
-            <button draggable="true">
-                43 ENG
-            </button>
-            <button draggable="true">
-                43 ENG
-            </button>
-            <button draggable="true">
-                43 ENG
-            </button>
-            <button draggable="true">
-                43 ENG
-            </button>
-            <button draggable="true">
-                43 ENG
-            </button>
-            <button draggable="true">
-                43 ENG
-            </button>
-            <button draggable="true">
-                43 ENG
-            </button>
-            <button draggable="true">
-                43 ENG
-            </button>
-            </button>
-            <button draggable="true">
-                43 ENG
-            </button>
-            <button draggable="true">
-                43 ENG
-            </button>
-            <button draggable="true">
-                43 ENG
-            </button>
-            <button draggable="true">
-                43 ENG
-            </button>
-            </button>
-            <button draggable="true">
-                43 ENG
-            </button>
-            <button draggable="true">
-                43 ENG
-            </button>
-            <button draggable="true">
-                43 ENG
-            </button>
-            <button draggable="true">
-                43 ENG
-            </button>
-        </div>
-
-    </div>
-
     <div class="navbar">
+        <div class="leftSection">
+            <p class="companyName">Browndale Fire Co. Incident Management Dashboard</p>
+        </div>
         <div class="rightSection">
-            <ul>
-                <li>f</li>
+            <ul class="nav">
+                <li><span id="timerText"></span></li>
+                <li><button onclick="showNewCompanyPopup()">New Company</button></li>
+                <li><button href="index.html" id="timerStart" onclick="startTimer();">Start
+                        Timer</button></li>
             </ul>
         </div>
     </div>
 
+    <div class="sidebarWrapper">
+        <div class="topBar">
+            <label for="countySelect">Select County:</label>
+            <select name="countySelect" id="countySelect" onchange="updateDepartmentList(event)">
+                <option value="lackawanna">Lackawanna</option>
+                <option value="susquehanna">Susquehanna</option>
+                <option value="wayne">Wayne</option>
+            </select>
+        </div>
+        <div class="sidebarItemContainer" id="sidebar" ondragover="allowDrop(event)" ondrop="drop(event)">
+            <!--Lackawanna-->
+            <button draggable="true" id="24ENG" ondragstart="drag(event)" data-county="lackawanna">
+                24 ENG
+            </button>
+            <button draggable="true" id="24TNKRENG" ondragstart="drag(event)" data-county="lackawanna">
+                24 TNKR
+            </button>
+            <button draggable="true" id="24SQDENG" ondragstart="drag(event)" data-county="lackawanna">
+                24 SQD
+            </button>
+            <button draggable="true" id="24BRSHENG" ondragstart="drag(event)" data-county="lackawanna">
+                24 BRSH
+            </button>
+            <button draggable="true" id="24-9AMBENG" ondragstart="drag(event)" data-county="lackawanna">
+                24-9 AMB
+            </button>
+            <button draggable="true" id="51RESENG" ondragstart="drag(event)" data-county="lackawanna">
+                51 RES
+            </button>
+            <button draggable="true" id="51ATVENG" ondragstart="drag(event)" data-county="lackawanna">
+                51 ATV
+            </button>
+            <button draggable="true" id="51ATKENG" ondragstart="drag(event)" data-county="lackawanna">
+                51 ATK
+            </button>
+            <button draggable="true" id="51UTILENG" ondragstart="drag(event)" data-county="lackawanna">
+                51 UTIL
+            </button>
+            <button draggable="true" id="51RESENG" ondragstart="drag(event)" data-county="lackawanna">
+                51-1 RES
+            </button>
+            <button draggable="true" id="59RESENG" ondragstart="drag(event)" data-county="lackawanna">
+                59 RES
+            </button>
+            <button draggable="true" id="59-8AMBENG" ondragstart="drag(event)" data-county="lackawanna">
+                59-8 AMB
+            </button>
+            <button draggable="true" id="59-9AMBENG" ondragstart="drag(event)" data-county="lackawanna">
+                59-9 AMB
+            </button>
+            <button draggable="true" id="60ENG" ondragstart="drag(event)" data-county="lackawanna">
+                60 ENG
+            </button>
+            <button draggable="true" id="60TNKRENG" ondragstart="drag(event)" data-county="lackawanna">
+                60 TNKR
+            </button>
+            <button draggable="true" id="60MINIENG" ondragstart="drag(event)" data-county="lackawanna">
+                60 MINI
+            </button>
+            <button draggable="true" id="61-3ENG" ondragstart="drag(event)" data-county="lackawanna">
+                61-3 ENG
+            </button>
+            <button draggable="true" id="61-4ENG" ondragstart="drag(event)" data-county="lackawanna">
+                61-4 ENG
+            </button>
+            <button draggable="true" id="62SQDENG" ondragstart="drag(event)" data-county="lackawanna">
+                62 SQD
+            </button>
+            <button draggable="true" id="62TNKRENG" ondragstart="drag(event)" data-county="lackawanna">
+                62 TNKR
+            </button>
+            <button draggable="true" id="62BRSHENG" ondragstart="drag(event)" data-county="lackawanna">
+                62 BRSH
+            </button>
+
+            <!--Susquehanna-->
+            <button draggable="true" id="18BRSHENG" ondragstart="drag(event)" data-county="susquehanna">
+                18 BRSH
+            </button>
+            <button draggable="true" id="18-2BRSHENG" ondragstart="drag(event)" data-county="susquehanna">
+                18-2 BRSH
+            </button>
+            <button draggable="true" id="18-3BRSHENG" ondragstart="drag(event)" data-county="susquehanna">
+                18-3 BRSH
+            </button>
+            <button draggable="true" id="18TNKRENG" ondragstart="drag(event)" data-county="susquehanna">
+                18 TNKR
+            </button>
+            <button draggable="true" id="18LDRENG" ondragstart="drag(event)" data-county="susquehanna">
+                18-2 LDR
+            </button>
+            <button draggable="true" id="18RESENG" ondragstart="drag(event)" data-county="susquehanna">
+                18-2 RES
+            </button>
+            <button draggable="true" id="18-9AMBENG" ondragstart="drag(event)" data-county="susquehanna">
+                18-9 AMB
+            </button>
+            <button draggable="true" id="52-1TNKRENG" ondragstart="drag(event)" data-county="susquehanna">
+                52-1 TNKR
+            </button>
+            <button draggable="true" id="52-2ENG" ondragstart="drag(event)" data-county="susquehanna">
+                52-2 ENG
+            </button>
+            <button draggable="true" id="52-4ENG" ondragstart="drag(event)" data-county="susquehanna">
+                52-4 ENG
+            </button>
+            <button draggable="true" id="52-3BRSHENG" ondragstart="drag(event)" data-county="susquehanna">
+                52-3 BRSH
+            </button>
+            <button draggable="true" id="41ENG" ondragstart="drag(event)" data-county="susquehanna">
+                41 ENG
+            </button>
+            <button draggable="true" id="41RESENG" ondragstart="drag(event)" data-county="susquehanna">
+                41 RES
+            </button>
+            <button draggable="true" id="41UTILENG" ondragstart="drag(event)" data-county="susquehanna">
+                41 UTIL
+            </button>
+            <button draggable="true" id="41-7AMBENG" ondragstart="drag(event)" data-county="susquehanna">
+                41-7 AMB
+            </button>
+            <button draggable="true" id="41-8AMBENG" ondragstart="drag(event)" data-county="susquehanna">
+                41-8 AMB
+            </button>
+            <button draggable="true" id="41-9AMBENG" ondragstart="drag(event)" data-county="susquehanna">
+                41-9 AMB
+            </button>
+
+            <!-- Wayne -->
+            <button draggable="true" id="1-1ENGENG" ondragstart="drag(event)" data-county="wayne">
+                1-1 ENG
+            </button>
+            <button draggable="true" id="1-2ENG" ondragstart="drag(event)" data-county="wayne">
+                1-2 ENG
+            </button>
+            <button draggable="true" id="1-3ENG" ondragstart="drag(event)" data-county="wayne">
+                1-3 ENG
+            </button>
+            <button draggable="true" id="1-1RESENG" ondragstart="drag(event)" data-county="wayne">
+                1-1 RES
+            </button>
+            <button draggable="true" id="1-2RESENG" ondragstart="drag(event)" data-county="wayne">
+                1-2RES
+            </button>
+            <button draggable="true" id="1SPLYENG" ondragstart="drag(event)" data-county="wayne">
+                1 SPLY
+            </button>
+            <button draggable="true" id="1BRSHENG" ondragstart="drag(event)" data-county="wayne">
+                1 BRSH
+            </button>
+            <button draggable="true" id="12TNKRENG" ondragstart="drag(event)" data-county="wayne">
+                12 TNKR
+            </button>
+            <button draggable="true" id="12ENG" ondragstart="drag(event)" data-county="wayne">
+                12 ENG
+            </button>
+            <button draggable="true" id="12RESENG" ondragstart="drag(event)" data-county="wayne">
+                12 RES
+            </button>
+            <button draggable="true" id="13-1ENG" ondragstart="drag(event)" data-county="wayne">
+                13-1 ENG
+            </button>
+            <button draggable="true" id="13-2LDRENG" ondragstart="drag(event)" data-county="wayne">
+                13-2 LDR
+            </button>
+            <button draggable="true" id="13-3ENG" ondragstart="drag(event)" data-county="wayne">
+                13-3 ENG
+            </button>
+            <button draggable="true" id="13-4LDRENG" ondragstart="drag(event)" data-county="wayne">
+                13-4 LDR
+            </button>
+            <button draggable="true" id="13-5ENG" ondragstart="drag(event)" data-county="wayne">
+                13-5 ENG
+            </button>
+            <button draggable="true" id="13-7RESENG" ondragstart="drag(event)" data-county="wayne">
+                13-7 RES
+            </button>
+            <button draggable="true" id="13-8SQDENG" ondragstart="drag(event)" data-county="wayne">
+                13-8 SQD
+            </button>
+            <button draggable="true" id="28-1ENG" ondragstart="drag(event)" data-county="wayne">
+                28-1 ENG
+            </button>
+            <button draggable="true" id="28-5TNKRENG" ondragstart="drag(event)" data-county="wayne">
+                28-5 TNKR
+            </button>
+            <button draggable="true" id="28-6TNKRENG" ondragstart="drag(event)" data-county="wayne">
+                28-6 TNKR
+            </button>
+            <button draggable="true" id="28BRSHENG" ondragstart="drag(event)" data-county="wayne">
+                28 BRSH
+            </button>
+            <button draggable="true" id="28ATVENG" ondragstart="drag(event)" data-county="wayne">
+                28 ATV
+            </button>
+            <button draggable="true" id="43-1ENG" ondragstart="drag(event)" data-county="wayne">
+                43-1 ENG
+            </button>
+            <button draggable="true" id="43LDRENG" ondragstart="drag(event)" data-county="wayne">
+                43 LDR
+            </button>
+            <button draggable="true" id="43-CARENG" ondragstart="drag(event)" data-county="wayne">
+                43 CAR
+            </button>
+            <button draggable="true" id="43CHIEFENG" ondragstart="drag(event)" data-county="wayne">
+                43 CHIEF
+            </button>
+            <button draggable="true" id="43UTILENG" ondragstart="drag(event)" data-county="wayne">
+                43 UTIL
+            </button>
+            <button draggable="true" id="75ENG" ondragstart="drag(event)" data-county="wayne">
+                75 ENG
+            </button>
+            <button draggable="true" id="75RESENG" ondragstart="drag(event)" data-county="wayne">
+                75 RES
+            </button>
+            <button draggable="true" id="75BRSHENG" ondragstart="drag(event)" data-county="wayne">
+                75BRSH
+            </button>
+            <button draggable="true" id="75TNKRENG" ondragstart="drag(event)" data-county="wayne">
+                75TNKR
+            </button>
+            <button draggable="true" id="75ATVENG" ondragstart="drag(event)" data-county="wayne">
+                75 ATV
+            </button>
+            <button draggable="true" id="94ENG" ondragstart="drag(event)" data-county="wayne">
+                94 ENG
+            </button>
+            <button draggable="true" id="94TNKRENG" ondragstart="drag(event)" data-county="wayne">
+                94 TNKR
+            </button>
+            <button draggable="true" id="94UTILENG" ondragstart="drag(event)" data-county="wayne">
+                94 UTIL
+            </button>
+        </div>
+
+
+
+    </div>
+    <div class="pseudoBody">
+        <table id="incidentTable">
+            <tr>
+                <th>Ventillation</th>
+                <th>Interior/Fire Attack</th>
+                <th>Exterior Fire Attack</th>
+                <th>Search And Rescue</th>
+                <th>Exposure Protection</th>
+                <th>R.I.T</th>
+                <th>Rehab</th>
+                <th>Staging</th>
+            </tr>
+            <tr>
+                <td id="cell1" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell2" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell3" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell4" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell5" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell6" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell7" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell8" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+            </tr>
+            <tr>
+                <td id="cell9" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell10" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell11" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell12" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell13" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell14" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell15" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell16" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+            </tr>
+            <tr>
+                <td id="cell17" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell18" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell19" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell20" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell21" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell22" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell23" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell24" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+            </tr>
+            <tr>
+                <td id="cell25" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell26" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell27" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell28" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell29" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell30" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell31" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell32" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+            </tr>
+            <tr>
+                <td id="cell33" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell34" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell35" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell36" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell37" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell38" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell39" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell40" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+            </tr>
+            <tr>
+                <td id="cell41" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell42" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell43" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell44" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell45" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell46" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell47" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell48" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+            </tr>
+            <tr>
+                <td id="cell49" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell50" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell51" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell52" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell53" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell54" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell55" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="cell56" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+            </tr>
+        </table>
+        <div id="extraContent">
+            <div class="contentFlexWrapper">
+                <div id="incidentPhaseContainer">
+                    <div class="boxHeader">
+                        <p>
+                            Incident Phase
+                        </p>
+                    </div>
+                    <div id="incidents">
+                        <input type="checkbox" name="incidentPhase1" id="incidentPhase1">
+                        <label for="incidentPhase1">Water on fire</label><br>
+                        <input type="checkbox" name="incidentPhase2" id="incidentPhase2">
+                        <label for="incidentPhase2">On scene</label><br>
+                        <input type="checkbox" name="incidentPhase3" id="incidentPhase3">
+                        <label for="incidentPhase3">Fire knocked</label><br>
+                        <input type="checkbox" name="incidentPhase4" id="incidentPhase4">
+                        <label for="incidentPhase4">Overhaul</label><br>
+                        <input type="checkbox" name="incidentPhase5" id="incidentPhase5">
+                        <label for="incidentPhase5">Investigation</label>
+                    </div>
+                </div>
+                <div id="benchmarkContainer">
+                    <div class="boxHeader">
+                        <p>
+                            Benchmarks
+                        </p>
+                    </div>
+                    <div id="benchmarks">
+                        <input type="checkbox" name="benchmarkPhase1" id="benchmarkPhase1">
+                        <label for="benchmarkPhase1">1st - 10 Min</label><br>
+                        <input type="checkbox" name="benchmarkPhase2" id="benchmarkPhase2">
+                        <label for="benchmarkPhase2">2nd - 25 Min</label><br>
+                        <input type="checkbox" name="benchmarkPhase3" id="benchmarkPhase3">
+                        <label for="benchmarkPhase3">3rd - 40 Min</label><br>
+                        <input type="checkbox" name="benchmarkPhase4" id="benchmarkPhase4">
+                        <label for="benchmarkPhase4">4th - 55 Min</label><br>
+                        <input type="checkbox" name="benchmarkPhase5" id="benchmarkPhase5">
+                        <label for="benchmarkPhase5">5th - 1hr 10 Min</label>
+                    </div>
+                </div>
+                <div id="resourceContainer">
+                    <div class="boxHeader">
+                        <p>
+                            Additional Resources
+                        </p>
+                    </div>
+                    <div id="resources">
+                        <div>
+                            <input type="checkbox" name="resourcePhase1" id="resourcePhase1">
+                            <label for="resourcePhase1">Law Enforcement</label><br>
+                            <input type="checkbox" name="resourcePhase2" id="resourcePhase2">
+                            <label for="resourcePhase2">Air Transport</label><br>
+                            <input type="checkbox" name="resourcePhase3" id="resourcePhase3">
+                            <label for="resourcePhase3">Gas Company</label><br>
+                            <input type="checkbox" name="resourcePhase4" id="resourcePhase4">
+                            <label for="resourcePhase4">Water Company</label><br>
+                            <input type="checkbox" name="resourcePhase5" id="resourcePhase5">
+                            <label for="resourcePhase5">Power Company</label>
+
+                        </div>
+                        <div>
+                            <input type="checkbox" name="resourcePhase7" id="resourcePhase7">
+                            <label for="resourcePhase7">Redcross</label><br>
+                        </div>
+                    </div>
+                </div>
+                <div id="eventChecklistContainer">
+                    <div class="boxHeader">
+                        <p>
+                            Event Checklist
+                        </p>
+                    </div>
+                    <div id="eventChecklists">
+                        <div style="float:left">
+                            <input type="checkbox" name="eventChecklistPhase1" id="eventChecklistPhase1">
+                            <label for="eventChecklistPhase1">Horizontal Ventilation</label><br>
+                            <input type="checkbox" name="eventChecklistPhase2" id="eventChecklistPhase2">
+                            <label for="eventChecklistPhase2">Vertical Ventilation</label><br>
+                            <input type="checkbox" name="eventChecklistPhase3" id="eventChecklistPhase3">
+                            <label for="eventChecklistPhase3">Exposure Protection</label><br>
+                            <input type="checkbox" name="eventChecklistPhase4" id="eventChecklistPhase4">
+                            <label for="eventChecklistPhase4">Interior Attack</label><br>
+                            <input type="checkbox" name="eventChecklistPhase5" id="eventChecklistPhase5">
+                            <label for="eventChecklistPhase5">Exterior Attack</label>
+
+                        </div>
+                        <div style="float:right">
+                            <input type="checkbox" name="eventChecklistPhase9" id="eventChecklistPhase9">
+                            <label for="eventChecklistPhase10">Primary Search</label><br>
+                            <input type="checkbox" name="eventChecklistPhase10" id="eventChecklistPhase10">
+                            <label for="eventChecklistPhase11">Secondary Search</label><br>
+                            <input type="checkbox" name="eventChecklistPhase11" id="eventChecklistPhase11">
+                            <label for="eventChecklistPhase12">Utilities Shut-off</label><br>
+                            <input type="checkbox" name="eventChecklistPhase12" id="eventChecklistPhase12">
+                            <label for="eventChecklistPhase12">Rehab Established</label><br>
+                            <input type="checkbox" name="eventChecklistPhase13" id="eventChecklistPhase13">
+                            <label for="eventChecklistPhase13">RIT Established</label>
+                        </div>
+                    </div>
+                </div>
+                <div id="attackStyleContainer">
+                    <div class="boxHeader">
+                        <p>
+                            Attack Type
+                        </p>
+                    </div>
+                    <div id="attackStyles">
+                        <input type="checkbox" name="attackStyle1" id="attackStyle1">
+                        <label for="attackStyle1">Interior/Offensive</label><br>
+                        <input type="checkbox" name="attackStyle2" id="attackStyle2">
+                        <label for="attackStyle2">Exterior/Defensive</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="newCompanyPopup" class="hidden">
+        <div class="boxHeader">
+            <p>Add New Company</p>
+            <button onclick="closeWindow()" id="closeWindow">X</button>
+        </div>
+        <div class="newCompanyPopupBody">
+            <label for="stationNumber">Station Number</label><br>
+            <input id="stationNumber" name="stationNumber" type="text"><br>
+            <label for="stationVehicleType">Station Vehicle Type</label><br>
+            <select id="stationVehicleType" name="stationVehicleType">
+                <option selected="selected" value="AMB">AMB</option>
+                <option value="ATV">ATV</option>
+                <option value="BRSH">BRSH</option>
+                <option value="CAR">CAR</option>
+                <option value="CHIEF">CHIEF</option>
+                <option value="ENG">ENG</option>
+                <option value="LDR">LDR</option>
+                <option value="MINI">MINI</option>
+                <option value="TNKR">TNKR</option>
+                <option value="RES">RES</option>
+                <option value="UTIL">UTIL</option>
+            </select><br>
+            <button onclick="addCompany(event)">
+                Add Company
+            </button>
+            <p>*All companies added are temporary, please don't refresh the page.</p>
+        </div>
+    </div>
+    <div class="hidden" id="popupWrapper">
+        <div id="popupContainer">
+            <p class="upperBar">
+                Benchmark Reached
+            </p>
+            <div id="popupBody">
+                <img alt="warning" src="images/warning.png" style="width:100%; max-width:64px; padding-bottom:16px;" />
+                <p style="padding: 0px 25px; text-align:center;">You have reached your first benchmark, please do a
+                    PAR
+                    check and confirm
+                    it's completed below to
+                    resume
+                    the
+                    timer</p>
+                <button class="button confirmPar" onclick="confirmParCheck();">Confirm PAR</button>
+            </div>
+        </div>
+    </div>
+
     <!-- Footer Scripts-->
+    <script src="js/timer.js">
+    </script>
+    <script src="js/incidentTableDragScript.js">
+    </script>
+    <script src="js/countySelection.js">
+    </script>
+    <script src="js/addCompany.js">
+    </script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+        </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+        </script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+        </script>
 </body>
 
 </html>

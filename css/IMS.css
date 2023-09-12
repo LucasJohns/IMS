@@ -1,60 +1,226 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700&display=swap');
 body {
-    position        : fixed;
+    position: fixed;
+    width: 100%;
+    height: 100%;
     background-color: #F3F3F3;
-    font-family     : 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'Roboto Slab', serif;
+}
+
+#closeWindow{
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    color:#fff;
+    border: none;
+    outline:none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 12px;
+}
+
+#closeWindow:hover{
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#newCompanyPopup{
+    position:fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    background-color: #DAD7CD;
+    box-shadow: 0px 0px 2px 1px #bab7af;
+    max-width: 340px;
+}
+
+.newCompanyPopupBody input:not(button), .newCompanyPopupBody select{
+    width: 100%;
+    height: 30px;
+    box-sizing: content-box;
+    border:none;
+}
+
+.newCompanyPopupBody p{
+    font-size: 16px;
+}
+
+.newCompanyPopupBody label{
+    margin-top: 15px;
+}
+
+
+
+.newCompanyPopupBody button{
+    background-color: #002642;
+    color: #fff;
+    display:block;
+    width: 140px;
+    height: 40px;
+    margin: 15px auto;
+    outline: none;
+    border: none;
+}
+
+.newCompanyPopupBody button:hover{
+    cursor: pointer;
+    filter: brightness(1.1);
+}
+.newCompanyPopupBody{
+    padding: 0 15px 15px;
+}
+
+.sidebarItemContainer button{
+    display: none !important;
+}
+
+.hidden {
+    display: none;
+}
+
+#extraContent{
+    margin-right: 25px;
+}
+
+#extraContent label{
+    font-size: 12px;
+    margin-bottom: 0px !important;
+}
+
+#incidentPhaseContainer, #benchmarkContainer, #resourceContainer, #attackStyleContainer, #eventChecklistContainer{
+    width: 12.6%;
+    background-color: #DAD7CD;
+    margin-bottom: 15px;
+}
+
+
+#eventChecklistContainer, #resourceContainer{
+    width: 31% !important;
+}
+
+.contentFlexWrapper{
+    display:flex;
+    flex-wrap:wrap;
+}
+
+#incidents, #benchmarks, #resources, #eventChecklists, #attackStyles{
+    padding: 10px 15px;
+    border-right: 1px solid #bab7af;
+    height: 240px;
+}
+
+#resources, #eventChecklists{
+    display:flex;
+    justify-content: center;
+}
+
+#resources div, #eventChecklists div{
+    padding-right: 30px;
+}
+
+#attackStyles{
+    border-right: none !important;
+}
+
+
+#incidentPhaseContainer input[type="checkbox"], #benchmarkContainer input[type="checkbox"], #resourceContainer input[type="checkbox"], #eventChecklistContainer input[type="checkbox"], #attackStyleContainer input[type="checkbox"]{
+    width: 16px;
+    height: 16px;
+    position: relative;
+    top: 3px;
+}
+
+.boxHeader{
+    background-color: #A50104;
+    width: 100%;
+    height: 30px;
+}
+
+.boxHeader p{
+    color:#fff;
+    font-size: 16px;
+    line-height: 30px;
+    text-align:Center;
+}
+
+.pseudoBody {
+    margin-left: 255px;
+    margin-top: 50px;
+}
+
+.companyName {
+    font-size: 16px;
+    color: #222222;
+    line-height: 50px;
+    font-family: 'Roboto Slab', serif;
+    font-weight: bold;
+    display:none;
+}
+
+#timerText {
+    line-height: 35px;
+    font-size: 18px;
+    padding: 0 15px;
 }
 
 /* Side Bar */
 
 .sidebarWrapper {
-    position        : inherit;
-    min-width       : 350px;
-    height          : 100%;
+    width: 240px;
+    height: 100vh;
     background-color: #DAD7CD;
-    z-index         : 2;
+    z-index: 2;
+    float: left;
 }
 
 .topBar {
     background-color: #A50104;
-    color           : #F3F3F3;
-    padding         : 15px;
+    color: #F3F3F3;
+    padding: 15px;
 }
 
 .topBar label {
-    font-size  : 18px;
-    font-weight: bold;
+    font-size: 14px;
+    font-family: 'Roboto Slab', serif;
 }
 
 .topBar select {
     margin-bottom: 7px;
-    width        : 100%;
-    padding      : 10px 15px;
-    font-size    : 16px;
+    width: 100%;
+    padding: 4px 15px;
+    font-size: 14px;
+    font-family: 'Roboto Slab', serif;
 }
 
 .sidebarItemContainer {
-    width         : 100%;
-    height        : 100%;
-    padding-top   : 30px;
+    width: 100%;
+    height: 100%;
+    padding-top: 30px;
     padding-bottom: 15px;
-    padding       : 30px 30px 130px;
-    overflow-y    : scroll;
+    padding: 30px 30px 110px;
+    overflow-y: scroll;
 }
 
 .sidebarItemContainer button {
-    width           : 100%;
-    display         : block;
-    margin          : 0 auto;
-    height          : 50px;
-    border          : none;
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+    height: 50px;
+    border: none;
     background-color: #002642;
-    color           : #F3F3F3;
-    font-size       : 18px;
-    margin-bottom   : 18px;
+    color: #F3F3F3;
+    font-size: 16px;
+    margin-bottom: 15px;
+    font-family: 'Roboto Slab', serif;
+    font-weight: 500
 }
 
 .sidebarItemContainer button:hover {
     cursor: move;
+    border-bottom: 8px solid #A50104;
+    line-height: 47px;
 }
 
 .sidebarItemContainer button:focus {
@@ -62,19 +228,202 @@ body {
 }
 
 /*Nav Bar*/
+
 .navbar {
-    margin-left     : 350px;
-    position        : fixed;
-    width           : 100%;
-    height          : 50px;
+    margin-left: 240px;
+    padding-right: 240px;
+    padding-top: 0;
+    position: fixed;
+    width: 100%;
+    height: 50px;
     background-color: #DAD7CD;
-    border-bottom   : 15px solid #A50104;
+    border-bottom: 15px solid #A50104;
 }
 
 .rightSection {
-    position        : fixed;
-    right           : 0;
-    width           : 50%;
-    height          : 35px;
-    background-color: red;
+    float: right;
+    height: 35px;
+}
+
+.leftSection {
+    float: left;
+    width: 50%;
+    height: 35px;
+}
+
+.nav {
+    list-style-type: none;
+    float: right;
+    padding: 0;
+    margin: 0;
+}
+
+.nav li:last-child a, .nav li:last-child button {
+    margin-right: 0px !important;
+}
+
+.nav li {
+    display: inline-block;
+}
+
+.nav li a, .nav li button {
+    color: #F3F3F3;
+    min-width: 150px;
+    line-height: 35px;
+    display: block;
+    text-align: center;
+    margin-right: 2px;
+    background-color: #002642;
+    font-size: 16px;
+    font-weight: 500;
+    outline: none;
+    border: none;
+    padding: 0;
+}
+
+.nav li a:hover, .nav li button:hover {
+    text-decoration: none;
+    filter: brightness(1.25);
+    cursor: pointer;
+}
+
+/*Incident Table*/
+
+#incidentTable {
+    margin: 65px 0px 15px 0px;
+    cursor: default;
+}
+
+#incidentTable th {
+    border: 1px solid #002642;
+    text-align: center;
+    font-size: 16px;
+    line-height: 17px;
+    padding: 6px;
+    color: #F3F3F3;
+    background-color: #002642;
+    font-weight: 500;
+}
+
+#incidentTable tr td button {
+    width: 100%;
+    height: 100%;
+    color: #DAD7CD;
+    line-height: 35px;
+    display: block;
+    text-align: center;
+    margin-right: 2px;
+    background-color: #5B5B5B;
+    font-size: 16px;
+    font-weight: 500;
+    outline: none;
+    border: none;
+    padding: 0;
+    font-weight: bold;
+}
+
+#incidentTable tr td button:hover {
+    cursor: move;
+    filter: brightness(1.25);
+    line-height: 52px;
+    outline: none;
+}
+
+#incidentTable td {
+    border: 1px solid black;
+    height: 60px;
+    width: 120px;
+    padding: 0;
+}
+
+/* popup container */
+
+#popupWrapper {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#popupContainer {
+    margin: 0;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 450px;
+    min-height: 235px;
+    background-color: #DAD7CD;
+}
+
+#popupBody {
+    padding: 15px 15px 15px;
+}
+
+#popupContainer .upperBar {
+    background-color: #A50104;
+    color: #f3f3f3;
+    font-size: 16px;
+    text-align: center;
+    height: 35px;
+    line-height: 35px;
+    margin: 0 0;
+}
+
+#popupContainer img {
+    display: block;
+    margin: 0 auto;
+}
+
+/* Button Setup */
+
+.button {
+    color: #F3F3F3;
+    min-width: 150px;
+    line-height: 35px;
+    display: block;
+    text-align: center;
+    margin-right: 2px;
+    background-color: #002642;
+    font-size: 16px;
+    font-weight: 500;
+    outline: none;
+    border: none;
+    padding: 0;
+    margin: 0 auto;
+}
+
+.button:hover {
+    text-decoration: none;
+    filter: brightness(1.25);
+    cursor: pointer;
+}
+
+/*Scroll bar*/
+
+/* width */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }
